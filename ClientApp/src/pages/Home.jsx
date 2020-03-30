@@ -3,6 +3,7 @@ import React from 'react'
 export function Home() {
   return (
     <div>
+      <p>Wow thank you Gavin!</p>
       {/* <h1>Hello Student!</h1>
       <p>Welcome to your new SDG SPA, built with:</p>
       <ul>
