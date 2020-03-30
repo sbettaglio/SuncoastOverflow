@@ -7,7 +7,8 @@ namespace SuncoastOverflow.Models
 {
   public partial class DatabaseContext : DbContext
   {
-
+    public DbSet<Question> Questions { get; set; }
+    public DbSet<Answer> Answers { get; set; }
 
 
 
