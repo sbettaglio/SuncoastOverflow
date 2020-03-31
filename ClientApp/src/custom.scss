@@ -1,4 +1,3 @@
-
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -440,7 +439,6 @@ header > nav.navbar {
 
 // END ALLQUESTIONS
 
-
 // START ASK QUESTION
 .ask-question {
   background-color: rgb(235, 237, 238);
@@ -505,7 +503,7 @@ header > nav.navbar {
   border-radius: 0.3rem;
   background-color: rgb(15, 126, 255);
   color: rgb(240, 248, 255);
-
+}
 //view question
 .questionTitle {
   display: grid;
@@ -522,4 +520,3 @@ header > nav.navbar {
   padding: 1rem 1rem;
   text-align: center;
 }
-
