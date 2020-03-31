@@ -12,3 +12,63 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+header > nav.navbar {
+  margin-bottom: 0 !important;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 90%;
+  justify-content: space-around;
+  background-color: #ffcf10;
+  text-align: center;
+  padding: 9rem 0;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+.hero p {
+  font-size: 1.3rem;
+  padding: 1rem 0;
+}
+.hero button {
+  margin: 0.2rem 7rem;
+  padding: 1rem 0;
+}
+
+.white {
+  background-color: white;
+  color: #f48024;
+  border: 0.1rem solid #f48024;
+  border-radius: 0.2rem;
+}
+
+.orange {
+  background-color: #f48024;
+  color: white;
+  border: 0.1rem solid #f48024;
+  border-radius: 0.2rem;
+}
+
+.callToAction {
+  padding: 5rem 0;
+}
+
+.ctaHead {
+  display: grid;
+  grid-template-columns: 90%;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.ctaHead h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.ctaHead hr {
+  background-color: #f48024;
+  padding: 0.5rem;
+}

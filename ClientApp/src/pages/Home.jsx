@@ -11,12 +11,12 @@ export function Home() {
           We build products that empower developers and connect them to
           solutions that enable productivity growth, and discovery.
         </p>
-        <button>For Developers</button>
-        <button>For Business</button>
+        <button className="white">For Developers</button>
+        <button className="orange">For Business</button>
       </section>
       <section className="callToAction">
         <section className="ctaHead">
-          <h1>For developers, by developers</h1>
+          <h2>For developers, by developers</h2>
           <hr />
           <p>
             Stack Overflow is an open community for anyone that codes. We help
