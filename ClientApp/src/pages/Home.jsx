@@ -2,62 +2,64 @@ import React from 'react'
 
 export function Home() {
   return (
-    <div>
-      <p>Wow thank you Gavin!</p>
-      {/* <h1>Hello Student!</h1>
-      <p>Welcome to your new SDG SPA, built with:</p>
-      <ul>
-        <li>
-          <a href="https://get.asp.net/">ASP.NET Core</a> and{' '}
-          <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx">
-            C#
-          </a>{' '}
-          for cross-platform server-side code
-        </li>
-        <li>
-          <a href="https://facebook.github.io/react/">React</a> for client-side
-          code
-        </li>
-        <li>
-          <a href="https://www.typescriptlang.org/">Typescript</a> for better
-          client-side code
-        </li>
-        <li>
-          <a href="https://sass-lang.com/">Sass</a> for better css
-        </li>
-        <li>
-          <a href="http://getbootstrap.com/">Bootstrap</a> for layout and
-          styling
-        </li>
-      </ul>
-      <p>To help you get started, we have also set up:</p>
-      <ul>
-        <li>
-          <strong>Client-side navigation</strong>.
-        </li>
-        <li>
-          <strong>Development server integration</strong>. In development mode,
-          the development server from <code>create-react-app</code> runs in the
-          background automatically, so your client-side resources are
-          dynamically built on demand and the page refreshes when you modify any
-          file.
-        </li>
-        <li>
-          <strong>Efficient production builds</strong>. In production mode,
-          development-time features are disabled, and your{' '}
-          <code>dotnet publish</code> configuration produces minified,
-          efficiently bundled JavaScript files.
-        </li>
-        <li>
-          <strong>Docker</strong>.
-        </li>
-      </ul>
-      <p>
-        The <code>ClientApp</code> subdirectory is a standard React application
-        based on the <code>create-react-app</code> template. If you open a
-        command prompt in that directory, you can run <code>npm</code> commands
-        such as <code>npm test</code> or <code>npm install</code>.
-      </p> */}
-    </div>
+    <>
+      <section className="hero">
+        <h1>
+          We <span>{'<3'}</span> people who code
+        </h1>
+        <p>
+          We build products that empower developers and connect them to
+          solutions that enable productivity growth, and discovery.
+        </p>
+        <button>For Developers</button>
+        <button>For Business</button>
+      </section>
+      <section className="callToAction">
+        <section className="ctaHead">
+          <h1>For developers, by developers</h1>
+          <hr />
+          <p>
+            Stack Overflow is an open community for anyone that codes. We help
+            you get answers to your toughest coding questions, share knowledge
+            with your coworkers in private, and find your next dream job.
+          </p>
+        </section>
+        <section className="ctaCard">
+          {/* icon */}
+          <h2>
+            Public Q<span>{'&'}</span>A
+          </h2>
+          <p>
+            Get answers to more than 16.5 million questions and give back by
+            sharing your knowledge with others. Sign up for an account.
+          </p>
+        </section>
+        <footer className="footerLinks">
+          <section className="linksLeft">
+            <a href="">Questions</a>
+            <a href="">Jobs</a>
+            <a href="">Developer Jobs</a>
+            <a href="">Salary Calculator</a>
+            <a href="">Help</a>
+            <a href="">Mobile</a>
+            <a href="">Disable Responsiveness</a>
+          </section>
+          <section className="linksCenter">
+            <a href="">Teams</a>
+            <a href="">Talent</a>
+            <a href="">Advertising</a>
+            <a href="">Enterprise</a>
+          </section>
+          <section className="linksRight">
+            <a href="">About</a>
+            <a href="">Questions</a>
+            <a href="">Work Here</a>
+            <a href="">Legal</a>
+            <a href="">Privacy Policy</a>
+            <a href="">Contact Us</a>
+          </section>
+        </footer>
+      </section>
+    </>
   )
 }
