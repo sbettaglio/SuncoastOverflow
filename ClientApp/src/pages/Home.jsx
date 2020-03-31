@@ -11,28 +11,32 @@ export function Home() {
           We build products that empower developers and connect them to
           solutions that enable productivity growth, and discovery.
         </p>
-        <button>For Developers</button>
-        <button>For Business</button>
+        <button className="whiteButton">For Developers</button>
+        <button className="orangeButton">For Business</button>
       </section>
       <section className="callToAction">
         <section className="ctaHead">
-          <h1>For developers, by developers</h1>
+          <h2>For developers, by developers</h2>
           <hr />
           <p>
-            Stack Overflow is an open community for anyone that codes. We help
-            you get answers to your toughest coding questions, share knowledge
-            with your coworkers in private, and find your next dream job.
+            Stack Overflow is an{' '}
+            <span className="orangeText">open community</span> for anyone that
+            codes. We help you get answers to your toughest coding questions,
+            share knowledge with your coworkers in private, and find your next
+            dream job.
           </p>
         </section>
         <section className="ctaCard">
           {/* icon */}
-          <h2>
+          <h3>
             Public Q<span>{'&'}</span>A
-          </h2>
+          </h3>
           <p>
             Get answers to more than 16.5 million questions and give back by
-            sharing your knowledge with others. Sign up for an account.
+            sharing your knowledge with others.{' '}
+            <span className="orangeText">Sign up</span> for an account.
           </p>
+          <button className="browseQButton">Browse questions</button>
         </section>
         <footer className="footerLinks">
           <section className="linksLeft">
