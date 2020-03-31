@@ -22,7 +22,7 @@ const QuestionForm = () => {
               Include all the information someone would need to answer your
               question
             </p>
-            <input type="text" className="question-input"></input>
+            <textarea type="text" className="question-input"></textarea>
           </section>
           <section>
             <h6>Tags</h6>
