@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export function Home() {
-  return <div></div>
   return (
     <>
       <section className="hero">
@@ -37,27 +37,27 @@ export function Home() {
         </section>
         <footer className="footerLinks">
           <section className="linksLeft">
-            <a href="">Questions</a>
-            <a href="">Jobs</a>
-            <a href="">Developer Jobs</a>
-            <a href="">Salary Calculator</a>
-            <a href="">Help</a>
-            <a href="">Mobile</a>
-            <a href="">Disable Responsiveness</a>
+            <Link to="/">Questions</Link>
+            <Link to="/">Jobs</Link>
+            <Link to="/">Developer Jobs</Link>
+            <Link to="/">Salary Calculator</Link>
+            <Link to="/">Help</Link>
+            <Link to="/">Mobile</Link>
+            <Link to="/">Disable Responsiveness</Link>
           </section>
           <section className="linksCenter">
-            <a href="">Teams</a>
-            <a href="">Talent</a>
-            <a href="">Advertising</a>
-            <a href="">Enterprise</a>
+            <Link to="/question">Teams</Link>
+            <Link to="/">Talent</Link>
+            <Link to="/">Advertising</Link>
+            <Link to="/">Enterprise</Link>
           </section>
           <section className="linksRight">
-            <a href="">About</a>
-            <a href="">Questions</a>
-            <a href="">Work Here</a>
-            <a href="">Legal</a>
-            <a href="">Privacy Policy</a>
-            <a href="">Contact Us</a>
+            <Link to="/">About</Link>
+            <Link to="/">Questions</Link>
+            <Link to="/">Work Here</Link>
+            <Link to="/">Legal</Link>
+            <Link to="/">Privacy Policy</Link>
+            <Link to="/">Contact Us</Link>
           </section>
         </footer>
       </section>
