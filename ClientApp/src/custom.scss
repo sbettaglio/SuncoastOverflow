@@ -168,3 +168,20 @@ header > nav.navbar {
 }
 
 // END ALLQUESTIONS
+
+//view question
+.questionTitle {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  justify-content: space-around;
+  border-top: 0.1rem solid grey;
+  border-bottom: 0.1rem solid grey;
+}
+.questionTitle p {
+  margin: 0;
+}
+
+.qtLeft {
+  padding: 1rem 1rem;
+  text-align: center;
+}
