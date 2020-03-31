@@ -16,8 +16,32 @@ header > nav.navbar {
   margin-bottom: 0 !important;
 }
 
+//footer
+.footerLinks ul {
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+}
+.footerLinks {
+  margin: 0;
+  // padding: 5rem 2rem;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footerLinks a {
+  color: grey;
+  padding: 1rem 0;
+}
+
+//HomePage Begins
 .hero {
   display: grid;
+  background-image: url(https://cdn.sstatic.net/img/home/illo-hero-small.svg?v=884735d21ea5);
+  background-position: -3.5rem;
+  background-repeat: no-repeat;
   grid-template-columns: 90%;
   justify-content: space-around;
   background-color: #ffcf10;
@@ -84,20 +108,30 @@ header > nav.navbar {
   width: 4rem;
   border-radius: 1rem;
 }
+.ctaHead p {
+  padding-top: 1rem;
+}
 
 .orangeText {
   color: #f48024;
 }
 
 .ctaCard {
+  border: 0.1rem solid rgb(224, 224, 224);
+  border-radius: 0.4rem;
   display: grid;
   grid-template-columns: 80%;
   justify-content: space-around;
   text-align: center;
-  border: 0.1rem solid rgb(224, 224, 224);
-  border-radius: 0.4rem;
   margin: 1rem 5rem;
-  padding: 3rem 0;
+  padding: 1rem 0;
+}
+
+.icon-Homepage {
+  color: #f48024;
+  font-size: 4rem;
+  padding: 1rem;
+  border: none;
 }
 
 // FOR ALL QUESTIONS
@@ -134,3 +168,20 @@ header > nav.navbar {
 }
 
 // END ALLQUESTIONS
+
+//view question
+.questionTitle {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  justify-content: space-around;
+  border-top: 0.1rem solid grey;
+  border-bottom: 0.1rem solid grey;
+}
+.questionTitle p {
+  margin: 0;
+}
+
+.qtLeft {
+  padding: 1rem 1rem;
+  text-align: center;
+}
