@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
 export function Home() {
   return (
@@ -12,8 +14,8 @@ export function Home() {
           We build products that empower developers and connect them to
           solutions that enable productivity growth, and discovery.
         </p>
-        <button className="whiteButton">For Developers</button>
-        <button className="orangeButton">For Business</button>
+        <button className="whiteButton">For developers</button>
+        <button className="orangeButton">For business</button>
       </section>
       <section className="callToAction">
         <section className="ctaHead">
@@ -28,7 +30,9 @@ export function Home() {
           </p>
         </section>
         <section className="ctaCard">
-          {/* icon */}
+          <section className="icon-Homepage">
+            <FontAwesomeIcon icon={faQuestionCircle} />
+          </section>
           <h3>
             Public Q<span>{'&'}</span>A
           </h3>
@@ -39,32 +43,79 @@ export function Home() {
           </p>
           <button className="browseQButton">Browse questions</button>
         </section>
-        <footer className="footerLinks">
-          <section className="linksLeft">
-            <Link to="/">Questions</Link>
-            <Link to="/">Jobs</Link>
-            <Link to="/">Developer Jobs</Link>
-            <Link to="/">Salary Calculator</Link>
-            <Link to="/">Help</Link>
-            <Link to="/">Mobile</Link>
-            <Link to="/">Disable Responsiveness</Link>
-          </section>
-          <section className="linksCenter">
-            <Link to="/question">Teams</Link>
-            <Link to="/">Talent</Link>
-            <Link to="/">Advertising</Link>
-            <Link to="/">Enterprise</Link>
-          </section>
-          <section className="linksRight">
-            <Link to="/">About</Link>
-            <Link to="/">Questions</Link>
-            <Link to="/">Work Here</Link>
-            <Link to="/">Legal</Link>
-            <Link to="/">Privacy Policy</Link>
-            <Link to="/">Contact Us</Link>
-          </section>
-        </footer>
       </section>
+      <footer className="footerLinks">
+        {/* <ul> */}
+        {/* <li> */}
+        <section className="linksLeft">
+          <ul>
+            <li>
+              <Link to="/">Questions</Link>
+            </li>
+            <li>
+              <Link to="/">Jobs</Link>
+            </li>
+            <li>
+              <Link to="/">Developer Jobs</Link>
+            </li>
+            <li>
+              <Link to="/">Salary Calculator</Link>
+            </li>
+            <li>
+              <Link to="/">Help</Link>
+            </li>
+            <li>
+              <Link to="/">Mobile</Link>
+            </li>
+            <li>
+              <Link to="/">Disable Responsiveness</Link>
+            </li>
+          </ul>
+        </section>
+        {/* </li> */}
+        {/* <li> */}
+        <section className="linksCenter">
+          <ul>
+            <li>
+              <Link to="/question">Teams</Link>
+            </li>
+            <li>
+              <Link to="/">Talent</Link>
+            </li>
+            <li>
+              <Link to="/">Advertising</Link>
+            </li>
+            <li>
+              <Link to="/">Enterprise</Link>
+            </li>
+          </ul>
+        </section>
+        {/* </li> */}
+        {/* </ul> */}
+        <section className="linksRight">
+          <ul>
+            <li>
+              <Link to="/">About</Link>
+            </li>
+            <li>
+              <Link to="/">Questions</Link>
+            </li>
+            <li>
+              <Link to="/">Work Here</Link>
+            </li>
+            <li>
+              {' '}
+              <Link to="/">Legal</Link>
+            </li>
+            <li>
+              <Link to="/">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link to="/">Contact Us</Link>
+            </li>
+          </ul>
+        </section>
+      </footer>
     </>
   )
 }
