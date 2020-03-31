@@ -14,5 +14,36 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.menu-bar {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 17% 11% 10% 12% 15% 10%;
+  padding: 0 0 1rem 0;
+  margin: 0;
+
+  .menu-bar-tab {
+    font-size: 0.75rem;
+    list-style: none;
+  }
+}
+
+.container {
+  padding: 0;
+}
+
+.search-bar-container {
+  background: #eff0f1;
+  display: grid;
+  grid-template-columns: 24% 50% 20%;
+  justify-content: center;
+  padding-top: 0.5rem;
+
+  .allquestions-text {
+    padding-top: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
