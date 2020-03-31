@@ -37,12 +37,9 @@ export class NavMenu extends Component {
           light
         >
           <Container>
-<<<<<<< HEAD
             <NavbarBrand tag={Link} to="/">
               Suncoast Overflow
             </NavbarBrand>
-=======
->>>>>>> abe21c74ad25d65c88999ca13d37a81320c1de47
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse
               className="d-sm-inline-flex flex-sm-row-reverse"

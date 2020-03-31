@@ -99,3 +99,38 @@ header > nav.navbar {
   margin: 1rem 5rem;
   padding: 3rem 0;
 }
+
+// FOR ALL QUESTIONS
+
+.menu-bar {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 17% 11% 10% 12% 15% 10%;
+  padding: 0 0 1rem 0;
+  margin: 0;
+
+  .menu-bar-tab {
+    font-size: 0.75rem;
+    list-style: none;
+  }
+}
+
+.container {
+  padding: 0;
+}
+
+.search-bar-container {
+  background: #eff0f1;
+  display: grid;
+  grid-template-columns: 24% 50% 20%;
+  justify-content: center;
+  padding-top: 0.5rem;
+
+  .allquestions-text {
+    padding-top: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+// END ALLQUESTIONS
