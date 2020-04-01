@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import SingleQuestion from '../components/SingleQuestion'
 
 const ViewQuestion = () => {
   return (
@@ -18,7 +19,12 @@ const ViewQuestion = () => {
             <li className="menu-bar-tab">Ask</li>
           </ul>
         </nav>
-        <section className="questionTitle">
+        <section className="question-list-container">
+          <ul className="question-list">
+            <SingleQuestion />
+          </ul>
+        </section>
+        {/* <section className="questionTitle">
           <section className="qtLeft">
             <button>
               <FontAwesomeIcon icon={faArrowUp} />
@@ -32,7 +38,7 @@ const ViewQuestion = () => {
             <h1>Brain Fart: What does javascript do?</h1>
             <p>C#</p>
           </section>
-        </section>
+        </section> */}
       </main>
     </>
   )
