@@ -1,6 +1,17 @@
-import React from 'react'
-
+import axios from 'axios'
+import React, { useState } from 'react'
 const QuestionForm = () => {
+  const [question, setQuestion] = useState({})
+  const updateQuestionData = e => {
+    const key = e.target.name
+    console.log(key)
+    const value = e.target.value
+    console.log(value)
+    setQuestion(prevQuestion => {
+      prevQuestion[key] = value
+      return prevQuestion
+    })
+  }
   return (
     <>
       <form className="question-form">
@@ -14,6 +25,8 @@ const QuestionForm = () => {
               className="title-input"
               type="text"
               placeholder="e.g Is there an R function for finding the index of an elements"
+              name="Title"
+              onChange={updateQuestionData}
             ></input>
           </section>
           <section>
@@ -22,7 +35,12 @@ const QuestionForm = () => {
               Include all the information someone would need to answer your
               question
             </p>
-            <textarea type="text" className="question-input"></textarea>
+            <textarea
+              type="text"
+              className="question-input"
+              name="Asked"
+              onChange={updateQuestionData}
+            ></textarea>
           </section>
           <section>
             <h6>Tags</h6>
@@ -31,6 +49,8 @@ const QuestionForm = () => {
               type="text"
               placeholder="e.g. (c++ reactjs ios)"
               className="question-tag"
+              name="Tag"
+              onChange={updateQuestionData}
             ></input>
           </section>
         </div>
