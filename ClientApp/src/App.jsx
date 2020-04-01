@@ -9,7 +9,11 @@ import NotFound from './pages/NotFound'
 import AskQuestion from './pages/AskQuestion'
 import ViewQuestion from './pages/ViewQuestion'
 import './custom.scss'
+<<<<<<< HEAD
 import './ask-question-styling.scss'
+=======
+import './home.scss'
+>>>>>>> b49a2a35863a27328940ff5f2bf8132e59ebd94c
 export default class App extends Component {
   static displayName = App.name
 
