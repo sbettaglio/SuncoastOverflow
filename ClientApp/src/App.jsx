@@ -9,12 +9,7 @@ import NotFound from './pages/NotFound'
 import AskQuestion from './pages/AskQuestion'
 import ViewQuestion from './pages/ViewQuestion'
 import './custom.scss'
-<<<<<<< HEAD
 import './ask-question.scss'
-=======
-import './AllQuestions.scss'
-import './home.scss'
->>>>>>> a2d86d1a6c17d125a6eb0c1bdc8be341f7a5a9a5
 export default class App extends Component {
   static displayName = App.name
 
