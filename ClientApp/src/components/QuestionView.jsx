@@ -4,6 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
+//look at HikeFinder for base code to look up question, and look up base code for rendering reviews/answers
+// apply base code here for rendering the question
+// increment/decrement vote counts on question
+
 const QuestionView = () => {
   return (
     <div>
