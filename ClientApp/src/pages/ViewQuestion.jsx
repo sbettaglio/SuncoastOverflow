@@ -27,7 +27,7 @@ const ViewQuestion = () => {
             <section className="upvotes">
               <FontAwesomeIcon icon={faCaretUp} className="upvote-icon" />
             </section>
-            <p className="upvote-count">0</p>
+            <p className="voteCount">0</p>
             <section className="upvotes">
               <FontAwesomeIcon icon={faCaretDown} className="upvote-icon" />
             </section>
