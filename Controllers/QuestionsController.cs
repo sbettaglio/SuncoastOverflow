@@ -79,11 +79,24 @@ namespace SuncoastOverflow.Controllers
     [HttpPost]
     public async Task<ActionResult<Question>> PostQuestion(Question question)
     {
-      _context.Questions.Add(question);
-      await _context.SaveChangesAsync();
+      if (question.Title == null)
+      {
+        return BadRequest("Title required to submit question");
+      }
+      else if (question.Asked == null)
+      {
+        return BadRequest("You need to actually ask the question");
+      }
+      else
+      {
 
-      // return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
-      return Ok(question);
+        question.TimeSubmitted = DateTime.Now;
+        _context.Questions.Add(question);
+        await _context.SaveChangesAsync();
+
+        // return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
+        return Ok(question);
+      }
     }
 
     // DELETE: api/Questions/5
