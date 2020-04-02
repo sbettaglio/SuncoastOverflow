@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { createSecretKey } from 'crypto'
 const QuestionForm = () => {
   const [question, setQuestion] = useState({})
   const [wasSuccessfullyCreated, setWasSuccessfullyCreated] = useState({
@@ -25,9 +26,9 @@ const QuestionForm = () => {
       // setWasSuccessfullyCreated({
       //   shouldRedirect: true,
       // })
-      alert('Request submitted')
+      alert('Question submitted')
     } else {
-      alert('All inputs must be filled to submit question')
+      alert('Title and question body are required to submit question')
     }
   }
   if (wasSuccessfullyCreated.shouldRedirect) {
@@ -81,7 +82,6 @@ const QuestionForm = () => {
                 className="question-tag"
                 name="Tag"
                 onChange={updateQuestionData}
-                required
               ></input>
             </section>
           </div>
