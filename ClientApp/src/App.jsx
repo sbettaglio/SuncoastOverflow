@@ -12,6 +12,8 @@ import './custom.scss'
 import './ask-question.scss'
 import './AllQuestions.scss'
 import './home.scss'
+import './AllQuestions.scss'
+import './viewQuestion.scss'
 export default class App extends Component {
   static displayName = App.name
 
