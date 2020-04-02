@@ -1,14 +1,8 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
-import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
-const SingleQuestion = props => {
-  const { question } = props
-
-  if (question {
+const SearchDetails = () => {
   return (
-    <li className="question-asked" id={question.id}>
+    <li className="question-asked" id={results.id}>
       <aside className="upvote-comments">
         <section className="upvotes">
           <p className="upvote-count">0</p>
@@ -21,11 +15,11 @@ const SingleQuestion = props => {
       </aside>
       <div className="question-container">
         <a className="question-text" href="">
-          {question.title}
+          {results.title}
         </a>
         <div className="category-container">
           <a href="" className="category">
-            {question.tag}
+            {results.tag}
           </a>
         </div>
         <div className="time-author-container">
@@ -37,10 +31,6 @@ const SingleQuestion = props => {
       </div>
     </li>
   )
-} else
-
-
-)
 }
 
-export default SingleQuestion
+export default SearchDetails
