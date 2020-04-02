@@ -79,6 +79,11 @@ namespace SuncoastOverflow.Controllers
     [HttpPost]
     public async Task<ActionResult<Question>> PostQuestion(Question question)
     {
+      if (question.Title == "" || question.Asked == "")
+      {
+        return BadRequest("Question and Title are required to submit question");
+      }
+      question.TimeSubmitted = DateTime.Now;
       _context.Questions.Add(question);
       await _context.SaveChangesAsync();
 

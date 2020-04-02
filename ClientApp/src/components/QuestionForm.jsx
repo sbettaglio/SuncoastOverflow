@@ -27,7 +27,7 @@ const QuestionForm = () => {
       // })
       alert('Request submitted')
     } else {
-      alert('Something went wrong. Please try again.')
+      alert('All inputs must be filled to submit question')
     }
   }
   if (wasSuccessfullyCreated.shouldRedirect) {
@@ -55,6 +55,7 @@ const QuestionForm = () => {
                 placeholder="e.g Is there an R function for finding the index of an elements"
                 name="Title"
                 onChange={updateQuestionData}
+                required
               ></input>
             </section>
             <section>
@@ -68,6 +69,7 @@ const QuestionForm = () => {
                 className="question-input"
                 name="Asked"
                 onChange={updateQuestionData}
+                required
               ></textarea>
             </section>
             <section>
@@ -79,6 +81,7 @@ const QuestionForm = () => {
                 className="question-tag"
                 name="Tag"
                 onChange={updateQuestionData}
+                required
               ></input>
             </section>
           </div>
