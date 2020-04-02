@@ -10,7 +10,10 @@ import AskQuestion from './pages/AskQuestion'
 import ViewQuestion from './pages/ViewQuestion'
 import './custom.scss'
 import './ask-question.scss'
+import './AllQuestions.scss'
 import './home.scss'
+import './AllQuestions.scss'
+import './viewQuestion.scss'
 export default class App extends Component {
   static displayName = App.name
 

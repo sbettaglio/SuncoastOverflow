@@ -1,45 +1,38 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
-import SingleQuestion from '../components/SingleQuestion'
+import MiniFooterComponent from '../components/MiniFooterComponent'
+import QuestionsMenu from '../components/QuestionsMenu'
+import Answer from '../components/Answer'
+import QuestionView from '../components/QuestionView'
 
 const ViewQuestion = () => {
   return (
     <>
-      <main>
-        <nav className="menu-bar-nav">
-          <ul className="menu-bar">
-            <li className="menu-bar-tab">Questions</li>
-            <li className="menu-bar-tab">Jobs</li>
-            <li className="menu-bar-tab">Tabs</li>
-            <li className="menu-bar-tab">Users</li>
-            <li className="menu-bar-tab">Badges</li>
-            <li className="menu-bar-tab">Ask</li>
-          </ul>
-        </nav>
-        <section className="question-list-container">
-          <ul className="question-list">
-            <SingleQuestion />
-          </ul>
+      <main className="viewQuestion">
+        <QuestionsMenu />
+        <QuestionView />
+        <section className="answerCard">
+          <h3>Answers: 5</h3>
+          <Answer />
+          <Answer />
+          <Answer />
+          <Answer />
+          <Answer />
         </section>
-        {/* <section className="questionTitle">
-          <section className="qtLeft">
-            <button>
-              <FontAwesomeIcon icon={faArrowUp} />
-            </button>
-            <p>40</p>
-            <button>
-              <FontAwesomeIcon icon={faArrowDown} />
-            </button>
-          </section>
-          <section className="qtRight">
-            <h1>Brain Fart: What does javascript do?</h1>
-            <p>C#</p>
-          </section>
-        </section> */}
+        <section className="replyCard">
+          <h3>Reply</h3>
+          <textarea
+            name=""
+            id=""
+            cols="40"
+            rows="8"
+            className="replyArea"
+            placeholder="type your reply here . . ."
+          ></textarea>
+          <button>Submit Reply</button>
+        </section>
       </main>
+      <MiniFooterComponent />
     </>
   )
 }
