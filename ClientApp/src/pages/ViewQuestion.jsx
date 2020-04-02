@@ -6,6 +6,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import SingleQuestion from '../components/SingleQuestion'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import MiniFooterComponent from '../components/MiniFooterComponent'
 
 const ViewQuestion = () => {
   return (
@@ -49,6 +50,7 @@ const ViewQuestion = () => {
           </div>
         </li>
       </main>
+      <MiniFooterComponent />
     </>
   )
 }
