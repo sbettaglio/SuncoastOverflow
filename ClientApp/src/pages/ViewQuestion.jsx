@@ -36,6 +36,9 @@ const ViewQuestion = props => {
         <QuestionComponent question={question} />
         <section className="answerCard">
           <h3>Answers:</h3>
+
+          {/* Map out the answers */}
+
           {/* <ul>
             {question.answers.map(answerList => {
               return <Answer key={questionId} answer={answerList.response} />
