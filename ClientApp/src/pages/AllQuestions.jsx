@@ -14,12 +14,10 @@ const AllQuestions = props => {
     const resp = await axios.get('/api/Questions/')
     console.log(resp.data)
     setQuestion(resp.data)
-    console.log(question)
   }
 
   useEffect(() => {
     getQuestionData()
-    // console.log(getQuestionData)
   }, [])
 
   return (
@@ -43,7 +41,7 @@ const AllQuestions = props => {
         <section className="question-list-container">
           <ul className="question-list">
             {question.map(question => {
-              return <SingleQuestion question={question} />
+              return <SingleQuestion question={question} key={question.id} />
             })}
           </ul>
         </section>

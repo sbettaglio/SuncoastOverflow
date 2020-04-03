@@ -7,7 +7,7 @@ const SingleQuestion = props => {
   const { question } = props
 
   return (
-    <li className="question-asked" id={question.id}>
+    <li className="question-asked" key={question.id}>
       <aside className="upvote-comments">
         <section className="upvotes">
           <p className="upvote-count">0</p>

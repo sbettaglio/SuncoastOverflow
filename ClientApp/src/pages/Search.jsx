@@ -42,7 +42,9 @@ const Search = () => {
         <section className="question-list-container">
           <ul className="question-list">
             {results.length > 0 ? (
-              <SearchDetails results={results} />
+              results.map(results => {
+                return <SearchDetails results={results} />
+              })
             ) : (
               <EmptySearchList />
             )}

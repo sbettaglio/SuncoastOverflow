@@ -6,6 +6,7 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 const SearchDetails = props => {
   const { results } = props
   console.log(results)
+  console.log(results.id)
 
   return (
     <li className="question-asked">
