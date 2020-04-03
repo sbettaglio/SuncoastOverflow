@@ -7,8 +7,10 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 // apply base code for map all answers to answer component
 
 const Answer = props => {
+  const { id, response } = props
+
   return (
-    <div>
+    <li key={id}>
       <section className="answer">
         <aside className="questionVoteSymbols">
           <section className="upVote">
@@ -24,8 +26,9 @@ const Answer = props => {
           </section>
         </aside>
         <p className="response">
-          The response to end all responses and forevermore tell you to suck it
-          because you have no clue what you are doing.
+          {response}
+          {/* The response to end all responses and forevermore tell you to suck it
+          because you have no clue what you are doing. */}
         </p>
       </section>
       <section className="answerFooter">
@@ -33,10 +36,10 @@ const Answer = props => {
           <p>Anonymous</p>
         </section>
         <section className="answerTime">
-          <p>answer.timeSubmitted</p>
+          {/* <p>answer.timeSubmitted</p> */}
         </section>
       </section>
-    </div>
+    </li>
   )
 }
 

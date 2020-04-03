@@ -27,7 +27,7 @@ export default class App extends Component {
           <Route exact path="/typescript" component={HeyWorld} />
           <Route exact path="/allquestions" component={AllQuestions} />
           <Route exact path="/question" component={AskQuestion} />
-          <Route exact path="/view" component={ViewQuestion} />
+          <Route exact path="/question/:id" component={ViewQuestion} />
           <Route exact path="/search" component={Search} />
           <Route exact path="*" component={NotFound} />
         </Switch>

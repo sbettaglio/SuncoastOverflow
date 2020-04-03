@@ -99,6 +99,18 @@ namespace SuncoastOverflow.Controllers
       }
     }
 
+    [HttpPost("{questionId}/answers")]
+    public async Task<ActionResult> AddAnswerForQuestion(int questionId, Answer answer)
+    {
+      //add questionId to answer
+      answer.QuestionId = questionId;
+      // add answer to the database
+      _context.Answers.Add(answer);
+      await _context.SaveChangesAsync();
+      // return something
+      return Ok(answer);
+    }
+
     // DELETE: api/Questions/5
     [HttpDelete("{id}")]
     public async Task<ActionResult<Question>> DeleteQuestion(int id)
