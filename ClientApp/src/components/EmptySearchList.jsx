@@ -3,11 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
-const SearchDetails = props => {
-  const { results } = props
-  console.log(results)
-  console.log(results.id)
-
+const EmptySearchList = () => {
   return (
     <li className="question-asked">
       <aside className="upvote-comments">
@@ -21,23 +17,17 @@ const SearchDetails = props => {
         </section>
       </aside>
       <div className="question-container">
-        <a className="question-text" href="">
-          {results.title}
-        </a>
+        <a className="question-text" href=""></a>
         <div className="category-container">
-          <a href="" className="category">
-            {results.tag}
-          </a>
+          <a href="" className="category"></a>
         </div>
         <div className="time-author-container">
-          <p className="time-text">30 secs ago</p>
-          <a className="author-text" href="">
-            CleverGirl
-          </a>
+          <p className="time-text"></p>
+          <a className="author-text" href=""></a>
         </div>
       </div>
     </li>
   )
 }
 
-export default SearchDetails
+export default EmptySearchList

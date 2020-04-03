@@ -8,6 +8,7 @@ import AllQuestions from './pages/AllQuestions'
 import NotFound from './pages/NotFound'
 import AskQuestion from './pages/AskQuestion'
 import ViewQuestion from './pages/ViewQuestion'
+import Search from './pages/Search'
 import './custom.scss'
 import './ask-question.scss'
 import './AllQuestions.scss'
@@ -27,6 +28,7 @@ export default class App extends Component {
           <Route exact path="/allquestions" component={AllQuestions} />
           <Route exact path="/question" component={AskQuestion} />
           <Route exact path="/view" component={ViewQuestion} />
+          <Route exact path="/search" component={Search} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </Layout>
