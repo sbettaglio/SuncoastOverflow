@@ -9,7 +9,6 @@ using SuncoastOverflow.Models;
 
 namespace SuncoastOverflow.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class SearchController : ControllerBase

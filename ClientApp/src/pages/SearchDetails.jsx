@@ -1,8 +1,15 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
-const SearchDetails = () => {
+const SearchDetails = props => {
+  const { results } = props
+  console.log(results)
+  console.log(results.id)
+
   return (
-    <li className="question-asked" id={results.id}>
+    <li className="question-asked">
       <aside className="upvote-comments">
         <section className="upvotes">
           <p className="upvote-count">0</p>
