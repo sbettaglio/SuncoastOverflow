@@ -50,7 +50,6 @@ const ViewQuestion = props => {
           <h3>Reply</h3>
           <textarea
             name="response"
-            id=""
             cols="40"
             rows="8"
             className="replyArea"
