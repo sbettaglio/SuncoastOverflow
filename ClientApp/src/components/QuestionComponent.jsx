@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
@@ -11,8 +12,23 @@ const QuestionComponent = props => {
   // console.log(banana)
   // console.log(question)
 
-  const [newAnswerText, setNewAnswerText] = useState('')
-  // const [questionScore, setQuestionScore] = useState(0)
+  // const [newAnswerText, setNewAnswerText] = useState('')
+  const sendVoteCountToApi
+  const [voteCount, setVoteCount] = useState(0)
+  const addToVoteCount = () => {
+    setVoteCount(prevVoteCount => {
+      prevVoteCount += 1
+      console.log(prevVoteCount)
+      return prevVoteCount
+    })
+  }
+  const subtractFromVoteCount = () => {
+    setVoteCount(prevVoteCount => {
+      prevVoteCount -= 1
+      console.log(prevVoteCount)
+      return prevVoteCount
+    })
+  }
 
   return (
     <div>
@@ -24,14 +40,18 @@ const QuestionComponent = props => {
                 <FontAwesomeIcon
                   icon={faCaretUp}
                   className="upVoteIcon"
-                  // onClick={updateQuestionScore()}
+                  onClick={addToVoteCount}
                 />
               </button>
             </section>
-            <p className="voteCount">{question.voteCount}</p>
+            <p className="voteCount">{voteCount}</p>
             <section className="downVote">
               <button>
-                <FontAwesomeIcon icon={faCaretDown} className="downVoteIcon" />
+                <FontAwesomeIcon
+                  icon={faCaretDown}
+                  className="downVoteIcon"
+                  onClick={subtractFromVoteCount}
+                />
               </button>
             </section>
           </aside>
