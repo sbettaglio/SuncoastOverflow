@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
-const QuestionView = () => {
+const QuestionComponent = props => {
+  // console.log(props)
+
+  const { question } = props
+  // console.log(banana)
+  // console.log(question)
+
+  const [newAnswerText, setNewAnswerText] = useState('')
+  // const [questionScore, setQuestionScore] = useState(0)
+
   return (
     <div>
       <section className="questionCard">
@@ -12,10 +21,14 @@ const QuestionView = () => {
           <aside className="questionVoteSymbols">
             <section className="upVote">
               <button>
-                <FontAwesomeIcon icon={faCaretUp} className="upVoteIcon" />
+                <FontAwesomeIcon
+                  icon={faCaretUp}
+                  className="upVoteIcon"
+                  // onClick={updateQuestionScore()}
+                />
               </button>
             </section>
-            <p className="voteCount">0</p>
+            <p className="voteCount">{question.voteCount}</p>
             <section className="downVote">
               <button>
                 <FontAwesomeIcon icon={faCaretDown} className="downVoteIcon" />
@@ -24,32 +37,22 @@ const QuestionView = () => {
           </aside>
           <section className="questionTandL">
             <section className="questionTitle">
-              <Link>
-                <h3>What is Javascript?</h3>
-              </Link>
+              <h3>{question.title}</h3>
             </section>
             <section className="questionLanguage">
-              <Link>Javascript</Link>
+              <Link>{question.tag}</Link>
             </section>
             <section className="authorName">
-              <p>Author Name</p>
+              <p>{question.author}</p>
             </section>
           </section>
         </section>
         <section className="questionText">
-          <p>
-            How do you expose a LINQ query as an ASMX web service? Usually, from
-            the business tier, I can return a typed DataSet or DataTable which
-            can be serialized for transport over ASMX. How can I do the same for
-            a LINQ query? Is there a way to populate a typed DataSet or
-            DataTable via a LINQ query? How can I get the result set of a LINQ
-            query into a DataSet or DataTable? Alternatively, is the LINQ query
-            serializable so that I can expose it as an ASMX web service?
-          </p>
+          <p>{question.asked}</p>
         </section>
       </section>
     </div>
   )
 }
 
-export default QuestionView
+export default QuestionComponent

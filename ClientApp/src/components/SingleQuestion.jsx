@@ -26,6 +26,17 @@ const SingleQuestion = props => {
           <a href="" className="category">
             {question.tag}
           </a>
+          <div className="category-container">
+            <a href="" className="category">
+              {question.tag}
+            </a>
+          </div>
+          <div className="time-author-container">
+            <p className="time-text">30 secs ago</p>
+            <a className="author-text" href="">
+              CleverGirl
+            </a>
+          </div>
         </div>
         <div className="time-author-container">
           <p className="time-text">30 secs ago</p>
