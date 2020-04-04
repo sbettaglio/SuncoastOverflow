@@ -7,10 +7,10 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 // apply base code for map all answers to answer component
 
 const Answer = props => {
-  const { id, response } = props
+  const { response } = props
 
   return (
-    <li key={id}>
+    <li>
       <section className="answer">
         <aside className="questionVoteSymbols">
           <section className="upVote">
