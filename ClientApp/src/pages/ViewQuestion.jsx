@@ -5,12 +5,16 @@ import MiniFooterComponent from '../components/MiniFooterComponent'
 import QuestionsMenu from '../components/QuestionsMenu'
 import Answer from '../components/Answer'
 import QuestionComponent from '../components/QuestionComponent'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const ViewQuestion = props => {
   const questionId = props.match.params.id
-  const [question, setQuestion] = useState({})
-  const [answer, setAnswer] = useState()
+  const [question, setQuestion] = useState({ answers: [] })
+  const [reply, setReply] = useState()
   console.log(question)
+  console.log(question.answers)
 
   const getQuestionData = async () => {
     const resp = await axios.get('/api/Questions/' + questionId)
@@ -22,9 +26,9 @@ const ViewQuestion = props => {
   }, [])
 
   const addAnswerToApi = async () => {
-    console.log('adding', answer)
+    console.log('adding', reply)
     const resp = await axios.post(`api/Questions/${questionId}/answers`, {
-      response: answer,
+      response: reply,
     })
     console.log(resp.data)
   }
@@ -36,25 +40,21 @@ const ViewQuestion = props => {
         <QuestionComponent question={question} />
         <section className="answerCard">
           <h3>Answers:</h3>
-
-          {/* Map out the answers */}
-
-          {/* <ul>
-            {question.answers.map(answerList => {
-              return <Answer key={questionId} answer={answerList.response} />
+          <ul>
+            {question.answers.map(response => {
+              return <Answer response={response.response} />
             })}
-          </ul> */}
+          </ul>
         </section>
         <section className="replyCard">
           <h3>Reply</h3>
           <textarea
             name="response"
-            id=""
             cols="40"
             rows="8"
             className="replyArea"
-            value={answer}
-            onChange={e => setAnswer(e.target.value)}
+            value={reply}
+            onChange={e => setReply(e.target.value)}
             placeholder="type your reply here . . ."
             required
           ></textarea>

@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json.Serialization;
 
 namespace SuncoastOverflow.Models
 {
@@ -10,6 +11,8 @@ namespace SuncoastOverflow.Models
     public string Author { get; set; }
     public int VoteCount { get; set; }
     public int QuestionId { get; set; }
+
+    [JsonIgnore]
     public Question Question { get; set; }
   }
 }
