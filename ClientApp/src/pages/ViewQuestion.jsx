@@ -43,6 +43,7 @@ const ViewQuestion = props => {
                 <Answer
                   response={response.response}
                   key={response.id}
+                  id={response.id}
                   voteCount={response.voteCount}
                 />
               )
