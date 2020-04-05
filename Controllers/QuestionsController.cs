@@ -87,31 +87,31 @@ namespace SuncoastOverflow.Controllers
     //   return NoContent();
     // }
 
-    // // POST: api/Questions
-    // // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-    // // more details see https://aka.ms/RazorPagesCRUD.
-    // [HttpPost]
-    // public async Task<ActionResult<Question>> PostQuestion(Question question)
-    // {
-    //   if (question.Title == null)
-    //   {
-    //     return BadRequest("Title required to submit question");
-    //   }
-    //   else if (question.Asked == null)
-    //   {
-    //     return BadRequest("You need to actually ask the question");
-    //   }
-    //   else
-    //   {
+    // POST: api/Questions
+    // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+    // more details see https://aka.ms/RazorPagesCRUD.
+    [HttpPost]
+    public async Task<ActionResult<Question>> PostQuestion(Question question)
+    {
+      if (question.Title == null)
+      {
+        return BadRequest("Title required to submit question");
+      }
+      else if (question.Asked == null)
+      {
+        return BadRequest("You need to actually ask the question");
+      }
+      else
+      {
 
-    //     question.TimeSubmitted = DateTime.Now;
-    //     _context.Questions.Add(question);
-    //     await _context.SaveChangesAsync();
+        question.TimeSubmitted = DateTime.Now;
+        _context.Questions.Add(question);
+        await _context.SaveChangesAsync();
 
-    //     // return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
-    //     return Ok(question);
-    //   }
-    // }
+        // return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
+        return Ok(question);
+      }
+    }
 
     [HttpPost("{questionId}/answers")]
     public async Task<ActionResult> AddAnswerForQuestion(int questionId, Answer answer)
