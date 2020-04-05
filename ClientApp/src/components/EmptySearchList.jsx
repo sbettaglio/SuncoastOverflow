@@ -17,13 +17,19 @@ const EmptySearchList = () => {
         </section>
       </aside>
       <div className="question-container">
-        <a className="question-text" href=""></a>
+        <a className="question-text" href="/">
+          Empty
+        </a>
         <div className="category-container">
-          <a href="" className="category"></a>
+          <a href="/" className="category">
+            Nothin'
+          </a>
         </div>
         <div className="time-author-container">
           <p className="time-text"></p>
-          <a className="author-text" href=""></a>
+          <a className="author-text" href="/">
+            Nobody
+          </a>
         </div>
       </div>
     </li>

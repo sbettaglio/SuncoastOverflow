@@ -6,9 +6,9 @@ import MiniFooter from '../components/MiniFooterComponent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const AllQuestions = props => {
-  console.log(props)
+const AllQuestions = () => {
   const [question, setQuestion] = useState([])
+  console.log(question)
 
   const getQuestionData = async () => {
     const resp = await axios.get('/api/Questions/')
@@ -34,7 +34,10 @@ const AllQuestions = props => {
             </a>
             <section className="search-right">
               <p className="show">show</p>
-              <a className="display-category"> Newest</a>
+              <a href="/" className="display-category">
+                {' '}
+                Newest
+              </a>
             </section>
           </div>
         </header>

@@ -42,7 +42,9 @@ export function Home() {
             sharing your knowledge with others.{' '}
             <span className="orangeText">Sign up</span> for an account.
           </p>
-          <button className="browseQButton">Browse questions</button>
+          <Link to="./AllQuestions/">
+            <button className="browseQButton">Browse questions</button>
+          </Link>
         </section>
       </section>
       <FooterComponent />

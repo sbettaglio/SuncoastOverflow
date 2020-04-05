@@ -10,7 +10,7 @@ p {
 .menu-bar {
   display: grid;
   justify-content: center;
-  grid-template-columns: 11% 9% 8% 8% 11% 5%;
+  grid-template-columns: 15% 9% 8% 8% 11% 5%;
   padding: 0.5rem 0 0.5rem 0;
   margin: 0;
 
@@ -24,8 +24,12 @@ p {
     color: white;
     background: #f48024;
     margin: 0;
-    padding: 0.35rem 0.5rem 0.35rem 0.5rem;
+    padding: 0.35rem 1rem 0.35rem 0.5rem;
     border-radius: 0.05rem;
+  }
+
+  .ask {
+    color: black;
   }
 }
 
