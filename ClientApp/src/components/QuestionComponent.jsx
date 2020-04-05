@@ -10,26 +10,36 @@ const QuestionComponent = props => {
 
   const { question } = props
   // console.log(banana)
-  // console.log(question)
+  console.log(question.answers)
 
   // const [newAnswerText, setNewAnswerText] = useState('')
-  const sendVoteCountToApi
   const [voteCount, setVoteCount] = useState(0)
   const addToVoteCount = () => {
     setVoteCount(prevVoteCount => {
       prevVoteCount += 1
-      console.log(prevVoteCount)
       return prevVoteCount
     })
+    sendUpVoteQuestionApi()
   }
   const subtractFromVoteCount = () => {
     setVoteCount(prevVoteCount => {
       prevVoteCount -= 1
-      console.log(prevVoteCount)
       return prevVoteCount
     })
+    sendDownVoteQuestionApi()
   }
-
+  const sendUpVoteQuestionApi = async () => {
+    const resp = await axios.put(`api/Questions/${question.id}/up`)
+    console.log(resp.data)
+  }
+  const sendDownVoteQuestionApi = async () => {
+    const resp = await axios.put(`api/Questions/${question.id}/down`)
+    console.log(resp.data)
+  }
+  useEffect(() => {
+    console.log('effect fired!')
+    setVoteCount(question.voteCount)
+  }, [question])
   return (
     <div>
       <section className="questionCard">

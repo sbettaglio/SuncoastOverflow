@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
@@ -7,21 +8,57 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 // apply base code for map all answers to answer component
 
 const Answer = props => {
-  const { response } = props
-
+  const { response, id } = props
+  console.log(response)
+  console.log(id)
+  const [voteCount, setVoteCount] = useState(props.voteCount)
+  const addToVoteCount = () => {
+    setVoteCount(prevVoteCount => {
+      prevVoteCount += 1
+      return prevVoteCount
+    })
+    sendUpVoteAnswerApi()
+  }
+  const subtractFromVoteCount = () => {
+    setVoteCount(prevVoteCount => {
+      prevVoteCount -= 1
+      return prevVoteCount
+    })
+    sendDownVoteAnswerApi()
+  }
+  const sendUpVoteAnswerApi = async () => {
+    const resp = await axios.put(`api/Answers/${id}/up`)
+    console.log(resp.data)
+  }
+  const sendDownVoteAnswerApi = async () => {
+    const resp = await axios.put(`api/Answers/${id}/down`)
+    console.log(resp.data)
+  }
+  useEffect(() => {
+    console.log('effect fired!')
+    setVoteCount(voteCount)
+  }, [voteCount])
   return (
     <li>
       <section className="answer">
         <aside className="questionVoteSymbols">
           <section className="upVote">
             <button>
-              <FontAwesomeIcon icon={faCaretUp} className="upVoteIcon" />
+              <FontAwesomeIcon
+                icon={faCaretUp}
+                className="upVoteIcon"
+                onClick={addToVoteCount}
+              />
             </button>
           </section>
-          <p className="voteCount">0</p>
+          <p className="voteCount">{voteCount}</p>
           <section className="downVote">
             <button>
-              <FontAwesomeIcon icon={faCaretDown} className="downVoteIcon" />
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="downVoteIcon"
+                onClick={subtractFromVoteCount}
+              />
             </button>
           </section>
         </aside>

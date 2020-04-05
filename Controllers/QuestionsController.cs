@@ -39,64 +39,79 @@ namespace SuncoastOverflow.Controllers
 
       return question;
     }
-
+    [HttpPut("{id}/up")]
+    public async Task<ActionResult<Question>> AddOneToVote(int id)
+    {
+      var questionToUpdate = _context.Questions.FirstOrDefault(q => q.Id == id);
+      questionToUpdate.VoteCount += 1;
+      await _context.SaveChangesAsync();
+      return Ok(questionToUpdate.VoteCount);
+    }
+    [HttpPut("{id}/down")]
+    public async Task<ActionResult<Question>> SubtractOneToVote(int id)
+    {
+      var questionToUpdate = _context.Questions.FirstOrDefault(q => q.Id == id);
+      questionToUpdate.VoteCount -= 1;
+      await _context.SaveChangesAsync();
+      return Ok(questionToUpdate.VoteCount);
+    }
     // PUT: api/Questions/5
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for
     // more details see https://aka.ms/RazorPagesCRUD.
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutQuestion(int id, Question question)
-    {
-      if (id != question.Id)
-      {
-        return BadRequest();
-      }
+    // [HttpPut("{id}")]
+    // public async Task<IActionResult> PutQuestion(int id, Question question)
+    // {
+    //   if (id != question.Id)
+    //   {
+    //     return BadRequest();
+    //   }
 
-      _context.Entry(question).State = EntityState.Modified;
+    //   _context.Entry(question).State = EntityState.Modified;
 
-      try
-      {
-        await _context.SaveChangesAsync();
-      }
-      catch (DbUpdateConcurrencyException)
-      {
-        if (!QuestionExists(id))
-        {
-          return NotFound();
-        }
-        else
-        {
-          throw;
-        }
-      }
+    //   try
+    //   {
+    //     await _context.SaveChangesAsync();
+    //   }
+    //   catch (DbUpdateConcurrencyException)
+    //   {
+    //     if (!QuestionExists(id))
+    //     {
+    //       return NotFound();
+    //     }
+    //     else
+    //     {
+    //       throw;
+    //     }
+    //   }
 
-      return NoContent();
-    }
+    //   return NoContent();
+    // }
 
-    // POST: api/Questions
-    // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-    // more details see https://aka.ms/RazorPagesCRUD.
-    [HttpPost]
-    public async Task<ActionResult<Question>> PostQuestion(Question question)
-    {
-      if (question.Title == null)
-      {
-        return BadRequest("Title required to submit question");
-      }
-      else if (question.Asked == null)
-      {
-        return BadRequest("You need to actually ask the question");
-      }
-      else
-      {
+    // // POST: api/Questions
+    // // To protect from overposting attacks, please enable the specific properties you want to bind to, for
+    // // more details see https://aka.ms/RazorPagesCRUD.
+    // [HttpPost]
+    // public async Task<ActionResult<Question>> PostQuestion(Question question)
+    // {
+    //   if (question.Title == null)
+    //   {
+    //     return BadRequest("Title required to submit question");
+    //   }
+    //   else if (question.Asked == null)
+    //   {
+    //     return BadRequest("You need to actually ask the question");
+    //   }
+    //   else
+    //   {
 
-        question.TimeSubmitted = DateTime.Now;
-        _context.Questions.Add(question);
-        await _context.SaveChangesAsync();
+    //     question.TimeSubmitted = DateTime.Now;
+    //     _context.Questions.Add(question);
+    //     await _context.SaveChangesAsync();
 
-        // return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
-        return Ok(question);
-      }
-    }
+    //     // return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
+    //     return Ok(question);
+    //   }
+    // }
 
     [HttpPost("{questionId}/answers")]
     public async Task<ActionResult> AddAnswerForQuestion(int questionId, Answer answer)
@@ -130,5 +145,6 @@ namespace SuncoastOverflow.Controllers
     {
       return _context.Questions.Any(e => e.Id == id);
     }
+
   }
 }
