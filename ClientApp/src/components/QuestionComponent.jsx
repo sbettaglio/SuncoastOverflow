@@ -1,19 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const QuestionComponent = props => {
-  // console.log(props)
-
   const { question } = props
-  // console.log(banana)
-  // console.log(question)
 
-  const [newAnswerText, setNewAnswerText] = useState('')
-  // const [questionScore, setQuestionScore] = useState(0)
-
+  const [voteCount, setVoteCount] = useState(0)
+  const addToVoteCount = () => {
+    setVoteCount(prevVoteCount => {
+      prevVoteCount += 1
+      return prevVoteCount
+    })
+    sendUpVoteQuestionApi()
+  }
+  const subtractFromVoteCount = () => {
+    setVoteCount(prevVoteCount => {
+      prevVoteCount -= 1
+      return prevVoteCount
+    })
+    sendDownVoteQuestionApi()
+  }
+  const sendUpVoteQuestionApi = async () => {
+    const resp = await axios.put(`api/Questions/${question.id}/up`)
+  }
+  const sendDownVoteQuestionApi = async () => {
+    const resp = await axios.put(`api/Questions/${question.id}/down`)
+  }
+  useEffect(() => {
+    setVoteCount(question.voteCount)
+  }, [question])
   return (
     <div>
       <section className="questionCard">
@@ -24,14 +42,18 @@ const QuestionComponent = props => {
                 <FontAwesomeIcon
                   icon={faCaretUp}
                   className="upVoteIcon"
-                  // onClick={updateQuestionScore()}
+                  onClick={addToVoteCount}
                 />
               </button>
             </section>
-            <p className="voteCount">{question.voteCount}</p>
+            <p className="voteCount">{voteCount}</p>
             <section className="downVote">
               <button>
-                <FontAwesomeIcon icon={faCaretDown} className="downVoteIcon" />
+                <FontAwesomeIcon
+                  icon={faCaretDown}
+                  className="downVoteIcon"
+                  onClick={subtractFromVoteCount}
+                />
               </button>
             </section>
           </aside>

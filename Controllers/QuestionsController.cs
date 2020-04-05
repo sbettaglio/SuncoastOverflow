@@ -39,38 +39,53 @@ namespace SuncoastOverflow.Controllers
 
       return question;
     }
-
+    [HttpPut("{id}/up")]
+    public async Task<ActionResult<Question>> AddOneToVote(int id)
+    {
+      var questionToUpdate = _context.Questions.FirstOrDefault(q => q.Id == id);
+      questionToUpdate.VoteCount += 1;
+      await _context.SaveChangesAsync();
+      return Ok(questionToUpdate.VoteCount);
+    }
+    [HttpPut("{id}/down")]
+    public async Task<ActionResult<Question>> SubtractOneToVote(int id)
+    {
+      var questionToUpdate = _context.Questions.FirstOrDefault(q => q.Id == id);
+      questionToUpdate.VoteCount -= 1;
+      await _context.SaveChangesAsync();
+      return Ok(questionToUpdate.VoteCount);
+    }
     // PUT: api/Questions/5
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for
     // more details see https://aka.ms/RazorPagesCRUD.
-    [HttpPut("{id}")]
-    public async Task<IActionResult> PutQuestion(int id, Question question)
-    {
-      if (id != question.Id)
-      {
-        return BadRequest();
-      }
+    // [HttpPut("{id}")]
+    // public async Task<IActionResult> PutQuestion(int id, Question question)
+    // {
+    //   if (id != question.Id)
+    //   {
+    //     return BadRequest();
+    //   }
 
-      _context.Entry(question).State = EntityState.Modified;
+    //   _context.Entry(question).State = EntityState.Modified;
 
-      try
-      {
-        await _context.SaveChangesAsync();
-      }
-      catch (DbUpdateConcurrencyException)
-      {
-        if (!QuestionExists(id))
-        {
-          return NotFound();
-        }
-        else
-        {
-          throw;
-        }
-      }
+    //   try
+    //   {
+    //     await _context.SaveChangesAsync();
+    //   }
+    //   catch (DbUpdateConcurrencyException)
+    //   {
+    //     if (!QuestionExists(id))
+    //     {
+    //       return NotFound();
+    //     }
+    //     else
+    //     {
+    //       throw;
+    //     }
+    //   }
 
-      return NoContent();
-    }
+    //   return NoContent();
+    // }
 
     // POST: api/Questions
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -130,5 +145,6 @@ namespace SuncoastOverflow.Controllers
     {
       return _context.Questions.Any(e => e.Id == id);
     }
+
   }
 }

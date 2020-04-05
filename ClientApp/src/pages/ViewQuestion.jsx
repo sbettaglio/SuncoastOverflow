@@ -42,7 +42,13 @@ const ViewQuestion = props => {
           <h3>Answers:</h3>
           <ul>
             {question.answers.map(response => {
-              return <Answer response={response.response} />
+              return (
+                <Answer
+                  response={response.response}
+                  id={response.id}
+                  voteCount={response.voteCount}
+                />
+              )
             })}
           </ul>
         </section>
