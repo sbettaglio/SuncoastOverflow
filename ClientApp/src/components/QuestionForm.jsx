@@ -85,9 +85,11 @@ const QuestionForm = () => {
               ></input>
             </section>
           </div>
-          <button className="submit-question" onClick={addQuestionToApi}>
-            Post your question
-          </button>
+          <form action="./AllQuestions/">
+            <button className="submit-question" onClick={addQuestionToApi}>
+              Post your question
+            </button>
+          </form>
         </form>
       </>
     )

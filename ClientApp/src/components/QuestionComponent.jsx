@@ -9,6 +9,7 @@ const QuestionComponent = props => {
   const { question } = props
 
   const [voteCount, setVoteCount] = useState(0)
+
   const addToVoteCount = () => {
     setVoteCount(prevVoteCount => {
       prevVoteCount += 1
@@ -23,15 +24,18 @@ const QuestionComponent = props => {
     })
     sendDownVoteQuestionApi()
   }
+
   const sendUpVoteQuestionApi = async () => {
     const resp = await axios.put(`api/Questions/${question.id}/up`)
   }
   const sendDownVoteQuestionApi = async () => {
     const resp = await axios.put(`api/Questions/${question.id}/down`)
   }
+
   useEffect(() => {
     setVoteCount(question.voteCount)
   }, [question])
+
   return (
     <div>
       <section className="questionCard">
@@ -62,7 +66,7 @@ const QuestionComponent = props => {
               <h3>{question.title}</h3>
             </section>
             <section className="questionLanguage">
-              <Link>{question.tag}</Link>
+              <Link to="">{question.tag}</Link>
             </section>
             <section className="authorName">
               <p>{question.author}</p>

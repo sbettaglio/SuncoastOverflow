@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
@@ -11,6 +10,7 @@ const Answer = props => {
   const { response, id } = props
 
   const [voteCount, setVoteCount] = useState(props.voteCount)
+
   const addToVoteCount = () => {
     setVoteCount(prevVoteCount => {
       prevVoteCount += 1
@@ -25,15 +25,18 @@ const Answer = props => {
     })
     sendDownVoteAnswerApi()
   }
+
   const sendUpVoteAnswerApi = async () => {
     const resp = await axios.put(`api/Answers/${id}/up`)
   }
   const sendDownVoteAnswerApi = async () => {
     const resp = await axios.put(`api/Answers/${id}/down`)
   }
+
   useEffect(() => {
     setVoteCount(voteCount)
   }, [voteCount])
+
   return (
     <li>
       <section className="answer">

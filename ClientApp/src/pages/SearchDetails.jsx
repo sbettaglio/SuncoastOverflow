@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons'
@@ -12,7 +13,7 @@ const SearchDetails = props => {
     <li className="question-asked">
       <aside className="upvote-comments">
         <section className="upvotes">
-          <p className="upvote-count">0</p>
+          <p className="upvote-count">{results.voteCount}</p>
           <FontAwesomeIcon icon={faCaretUp} className="upvote-icon" />
         </section>
         <section className="comments">
@@ -21,17 +22,17 @@ const SearchDetails = props => {
         </section>
       </aside>
       <div className="question-container">
-        <a className="question-text" href="">
+        <Link className="question-text" to={`./question/${results.id}`}>
           {results.title}
-        </a>
+        </Link>
         <div className="category-container">
-          <a href="" className="category">
+          <a href="/" className="category">
             {results.tag}
           </a>
         </div>
         <div className="time-author-container">
           <p className="time-text">30 secs ago</p>
-          <a className="author-text" href="">
+          <a className="author-text" href="/">
             CleverGirl
           </a>
         </div>

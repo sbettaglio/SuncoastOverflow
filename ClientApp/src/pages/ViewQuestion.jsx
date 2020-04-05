@@ -5,9 +5,6 @@ import MiniFooterComponent from '../components/MiniFooterComponent'
 import QuestionsMenu from '../components/QuestionsMenu'
 import Answer from '../components/Answer'
 import QuestionComponent from '../components/QuestionComponent'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const ViewQuestion = props => {
   const questionId = props.match.params.id
@@ -45,7 +42,7 @@ const ViewQuestion = props => {
               return (
                 <Answer
                   response={response.response}
-                  id={response.id}
+                  key={response.id}
                   voteCount={response.voteCount}
                 />
               )
@@ -64,7 +61,9 @@ const ViewQuestion = props => {
             placeholder="type your reply here . . ."
             required
           ></textarea>
-          <button onClick={addAnswerToApi}>Submit Reply</button>
+          <Link to="../AllQuestions/">
+            <button onClick={addAnswerToApi}>Submit Reply</button>
+          </Link>
         </section>
       </main>
       <MiniFooterComponent />
