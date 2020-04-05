@@ -6,13 +6,8 @@ import { faCaretUp } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const QuestionComponent = props => {
-  // console.log(props)
-
   const { question } = props
-  // console.log(banana)
-  console.log(question.answers)
 
-  // const [newAnswerText, setNewAnswerText] = useState('')
   const [voteCount, setVoteCount] = useState(0)
   const addToVoteCount = () => {
     setVoteCount(prevVoteCount => {
@@ -30,14 +25,11 @@ const QuestionComponent = props => {
   }
   const sendUpVoteQuestionApi = async () => {
     const resp = await axios.put(`api/Questions/${question.id}/up`)
-    console.log(resp.data)
   }
   const sendDownVoteQuestionApi = async () => {
     const resp = await axios.put(`api/Questions/${question.id}/down`)
-    console.log(resp.data)
   }
   useEffect(() => {
-    console.log('effect fired!')
     setVoteCount(question.voteCount)
   }, [question])
   return (

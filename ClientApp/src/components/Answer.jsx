@@ -9,8 +9,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const Answer = props => {
   const { response, id } = props
-  console.log(response)
-  console.log(id)
+
   const [voteCount, setVoteCount] = useState(props.voteCount)
   const addToVoteCount = () => {
     setVoteCount(prevVoteCount => {
@@ -28,14 +27,11 @@ const Answer = props => {
   }
   const sendUpVoteAnswerApi = async () => {
     const resp = await axios.put(`api/Answers/${id}/up`)
-    console.log(resp.data)
   }
   const sendDownVoteAnswerApi = async () => {
     const resp = await axios.put(`api/Answers/${id}/down`)
-    console.log(resp.data)
   }
   useEffect(() => {
-    console.log('effect fired!')
     setVoteCount(voteCount)
   }, [voteCount])
   return (
